@@ -1,0 +1,143 @@
+[data-block=unlocked] {
+  overflow: auto;
+}
+
+[data-block=blocked] {
+  overflow: hidden;
+}
+
+.wrapper {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.color {
+  color: #6d9886;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  font-size: 1.6rem;
+  color: #393e46;
+  background-color: #d9d9d9;
+}
+
+.nav {
+  display: flex;
+  position: sticky;
+  padding: 0.5em 1em;
+  top: 0;
+  left: 50%;
+  height: 60px;
+  background-color: #d9d9d9;
+}
+.nav .wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav__title {
+  font-size: 2.8rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: #393e46;
+}
+.nav__menu {
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  height: calc(100vh - 60px);
+  width: 100%;
+  translate: -50%;
+  scale: 0;
+  transition: scale 0.3s;
+  z-index: 5;
+  background-color: #d9d9d9;
+}
+.nav__menu--active {
+  scale: 1;
+}
+.nav__item {
+  display: block;
+  margin: 6em 0;
+  text-align: center;
+  text-decoration: none;
+  color: #393e46;
+}
+.nav__bars {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px;
+  padding: 0.5em;
+}
+.nav__bars--active .nav__line:nth-child(1) {
+  rotate: -45deg;
+  translate: 0 8px;
+}
+.nav__bars--active .nav__line:nth-child(2) {
+  scale: 0;
+}
+.nav__bars--active .nav__line:nth-child(3) {
+  rotate: 45deg;
+  translate: 0 -8px;
+}
+.nav__line {
+  width: 25px;
+  height: 3px;
+  border-radius: 5px;
+  background-color: #393e46;
+  transition: rotate 0.3s, translate 0.5s, scale 0.4s;
+}
+
+.header {
+  background-image: url("../img/caffe-small.jpg");
+  background-size: cover;
+  min-height: calc(100vh - 60px);
+}
+
+@media (min-width: 768px) {
+  .nav__title {
+    font-size: 3.2rem;
+  }
+  .nav__bars {
+    display: none;
+  }
+  .nav__menu {
+    position: static;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 60px;
+    scale: 1;
+    translate: 0;
+  }
+  .nav__item {
+    margin: 0;
+    margin-left: 0.8em;
+    font-size: 1.8rem;
+  }
+}
+@media (min-width: 992px) {
+  .nav__item {
+    transition: color 0.3s;
+  }
+  .nav__item:hover {
+    color: #6d9886;
+  }
+}/*# sourceMappingURL=main.css.map */
