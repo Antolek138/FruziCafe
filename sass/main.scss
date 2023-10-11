@@ -51,8 +51,8 @@ body {
 		width: 100%;
 		translate: -200%;
 		transition: translate 0.3s;
-		z-index: 5;
 		background-color: c.$whiteNav;
+		z-index: 5;
 
 		&--active {
 			translate: -50%;
@@ -102,9 +102,58 @@ body {
 }
 
 .header {
-	background-image: url('../img/caffe-small.jpg');
-	background-size: cover;
-	min-height: calc(100vh - 60px);
+	height: calc(100vh - 60px);
+
+	&__img {
+		position: relative;
+		height: 100%;
+		background-image: url('../img/caffe-small.jpg');
+		background-position: center;
+		background-size: cover;
+		z-index: -3;
+
+		&::after {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 100%;
+			background-color: c.$heroImg;
+		}
+	}
+
+	&__text {
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		padding: 0.4em 0.8em;
+		height: 100%;
+		font-size: 2.8rem;
+		text-align: center;
+		color: c.$whiteNav;
+		z-index: 1;
+
+		i {
+			position: absolute;
+			bottom: 50px;
+			font-size: 3.6rem;
+		}
+	}
+}
+
+@media (min-width: 576px) {
+	.header {
+		&__img {
+			background-image: url('../img/caffe-big.jpg');
+		}
+
+		&__text {
+			font-size: 3.6rem;
+		}
+	}
 }
 
 @media (min-width: 768px) {
@@ -129,8 +178,14 @@ body {
 
 		&__item {
 			margin: 0;
-			margin-left: 0.8em;
+			margin-left: 2em;
 			font-size: 1.8rem;
+		}
+	}
+
+	.header {
+		&__text {
+			font-size: 4.2rem;
 		}
 	}
 }
@@ -143,6 +198,12 @@ body {
 			&:hover {
 				color: c.$green;
 			}
+		}
+	}
+
+	.header{
+		&__img{
+			background-position-y: -300px;
 		}
 	}
 }
