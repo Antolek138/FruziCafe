@@ -143,6 +143,43 @@ body {
   font-size: 3.6rem;
 }
 
+.info {
+  margin: 3em 0;
+  padding: 0.5em 1em;
+}
+.info__img {
+  display: none;
+}
+.info__box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 25px;
+}
+.info__title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #393e46;
+}
+.info__entry {
+  font-weight: bold;
+  color: #6d9886;
+}
+.info__text {
+  margin-top: 1em;
+  text-align: center;
+}
+.info__btn {
+  margin-top: 3.5em;
+  padding: 1em 2em;
+  width: clamp(50px, 70%, 120px);
+  font-weight: bold;
+  text-decoration: none;
+  color: #d9d9d9;
+  background-color: #6d9886;
+}
+
 @media (min-width: 576px) {
   .header__img {
     background-image: url("../img/caffe-big.jpg");
@@ -174,6 +211,46 @@ body {
   }
   .header__text {
     font-size: 4.2rem;
+  }
+  .info {
+    display: flex;
+    flex-direction: row;
+  }
+  .info__img {
+    display: block;
+    width: 320px;
+  }
+  .info__box {
+    margin-left: 1em;
+  }
+  .info__title {
+    position: relative;
+    font-size: 2.4rem;
+    z-index: 1;
+  }
+  .info__title::after {
+    content: "01";
+    position: absolute;
+    top: -42px;
+    left: -42px;
+    font-size: 6.2rem;
+    color: #6d9886;
+    z-index: -2;
+  }
+  .info__title::before {
+    content: "";
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    background-color: #d9d9d9;
+    z-index: -1;
+  }
+  .info__entry {
+    align-self: flex-start;
+    margin-left: 1em;
+  }
+  .info__text {
+    text-align: left;
   }
 }
 @media (min-width: 992px) {
